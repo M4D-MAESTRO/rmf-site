@@ -1159,7 +1159,7 @@ var CriarComponenteComponent = /** @class */ (function () {
         this.primeiroForm = form;
         this.primeiroForm.style.display = "none";
         this.opcao = this.formItem.get('idTipoItem').value;
-        console.log(this.opcao);
+        //console.log(this.opcao);
     };
     CriarComponenteComponent.prototype.back = function (form) {
         this.primeiroForm.style.display = "block";
@@ -1514,7 +1514,7 @@ var FichaComponent = /** @class */ (function () {
             this.notificador = this.firestore.collection('ficha').valueChanges();
             // console.log(this.notificador);
             this.notificador.subscribe(function (res) {
-                console.log(res);
+                //console.log(res);
                 var obj = res.find(function (obj) { return obj.id == _this.idFicha; });
                 if (_this.currentTime != obj.timestamp && _this.idFicha == obj.id) {
                     _this.currentTime = obj.timestamp;

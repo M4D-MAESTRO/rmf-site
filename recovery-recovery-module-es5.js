@@ -172,7 +172,7 @@ var RecoveryPage = /** @class */ (function () {
         this.loading = false;
         this.display = true;
         this.formSolicitacao = this.formBuilder.group({
-            email: ['lhccorrea@hotmail.com', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].email]]
+            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].email]]
         });
         this.formGroup = this.formBuilder.group({
             codigoRecuperacao: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
@@ -191,14 +191,13 @@ var RecoveryPage = /** @class */ (function () {
         var email = this.formSolicitacao.get('email').value;
         this.authService.requestRecovery(email).
             subscribe(function (res) {
-            console.log(res);
             _this.loading = false;
             _this.display = false;
             _this.showRequestOk();
         }, function (error) {
             _this.loading = false;
             _this.display = true;
-            console.log(error);
+            //console.log(error);
         });
     };
     RecoveryPage.prototype.registrar = function () {

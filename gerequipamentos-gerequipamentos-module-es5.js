@@ -110,7 +110,7 @@ var ItemUpdateComponent = /** @class */ (function () {
         this.formItem.get('idTipoItem').setValue(this.itemService.getStaticType());
         this.itemService.findById(id, type)
             .subscribe(function (res) {
-            console.log(res);
+            // console.log(res);
             var nome = res.nome, descricao = res.descricao, tipoItem = res.tipoItem, tipoRPG = res.tipoRPG, imgURL = res.imgURL, valor = res.valor, peso = res.peso, isPrivate = res.isPrivate;
             _this.formItem.get('nome').setValue(nome);
             _this.formItem.get('desc').setValue(descricao);
@@ -155,7 +155,7 @@ var ItemUpdateComponent = /** @class */ (function () {
         this.primeiroForm = form;
         this.primeiroForm.style.display = "none";
         this.opcao = this.formItem.get('idTipoItem').value;
-        console.log(this.opcao);
+        //console.log(this.opcao);
     };
     ItemUpdateComponent.prototype.back = function (form) {
         this.primeiroForm.style.display = "block";
@@ -163,7 +163,7 @@ var ItemUpdateComponent = /** @class */ (function () {
     };
     ItemUpdateComponent.prototype.salvarArma = function () {
         var _this = this;
-        console.log('Peso:', this.formItem.get('peso').value);
+        //console.log('Peso:', this.formItem.get('peso').value);
         var obj = {
             id: this.itemService.getStaticID(),
             nome: this.formItem.get('nome').value,

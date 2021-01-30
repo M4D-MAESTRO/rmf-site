@@ -277,7 +277,6 @@ var CriarNpcComponent = /** @class */ (function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var id;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                console.log(event);
                 id = event.id;
                 this.idFichaModelo = id;
                 this.consultar();

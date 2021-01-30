@@ -95,7 +95,7 @@ let UpdateNpcComponent = class UpdateNpcComponent {
         const id = this.npcService.getStaticID();
         this.npcService.findById(id)
             .subscribe(npc => {
-            console.log(npc);
+            //console.log(npc);
             const { idNpc, historia, objetivos, interesses, isPrivate, tipoNpc, ficha } = npc;
             const { dinheiro } = ficha.inventario;
             this.formNpc.get('historia').setValue(historia);

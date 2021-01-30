@@ -166,7 +166,7 @@ let RecoveryPage = class RecoveryPage {
         this.loading = false;
         this.display = true;
         this.formSolicitacao = this.formBuilder.group({
-            email: ['lhccorrea@hotmail.com', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].email]]
+            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].email]]
         });
         this.formGroup = this.formBuilder.group({
             codigoRecuperacao: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
@@ -184,14 +184,13 @@ let RecoveryPage = class RecoveryPage {
         const email = this.formSolicitacao.get('email').value;
         this.authService.requestRecovery(email).
             subscribe(res => {
-            console.log(res);
             this.loading = false;
             this.display = false;
             this.showRequestOk();
         }, error => {
             this.loading = false;
             this.display = true;
-            console.log(error);
+            //console.log(error);
         });
     }
     registrar() {

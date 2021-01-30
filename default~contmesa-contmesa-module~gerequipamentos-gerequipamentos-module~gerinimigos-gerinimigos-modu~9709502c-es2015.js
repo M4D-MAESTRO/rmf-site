@@ -249,7 +249,7 @@ let CriarNpcComponent = class CriarNpcComponent {
     }
     selectedObj(event) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            console.log(event);
+            //console.log(event);
             const { id } = event;
             this.idFichaModelo = id;
             this.consultar();

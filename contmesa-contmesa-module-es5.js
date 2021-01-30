@@ -3667,7 +3667,7 @@ var DetalhaComponenteComponent = /** @class */ (function () {
                 this.componentAtual = component;
                 this.mesaService.findFaccao(idFaccao, idMesa, tipo)
                     .subscribe(function (res) {
-                    console.log(res);
+                    //console.log(res);
                     _this.formFaccao.get('objetivo').setValue(res.objetivo);
                     _this.formFaccao.get('descricao').setValue(res.descricao);
                     _this.formFaccao.get('nome').setValue(res.nome);
@@ -3988,7 +3988,7 @@ var DetalhaNpcComponent = /** @class */ (function () {
             objetivos: objetivos,
             tipoNpc: tipoNpc
         };
-        console.log(wantToast);
+        //console.log(wantToast)
         this.mesaService.updateNpcBasic(this.idNpc, this.idMesa, npcBasic)
             .subscribe(function (res) {
             if (wantToast == true)
@@ -4056,17 +4056,17 @@ var DetalhaNpcComponent = /** @class */ (function () {
     DetalhaNpcComponent.prototype.changedTab = function (evt) {
         var _this = this;
         this.formNpc.valueChanges.subscribe(function (res) {
-            console.log('ENTROU');
+            //console.log('ENTROU')
             _this.autoUpdate = true;
         });
         var aba = evt.detail.value;
-        console.log(this.autoUpdate);
+        // console.log(this.autoUpdate);
         if (aba != 'ficha') {
             this.loading = true;
             this.autoUpdate = false;
             this.mesaService.findNpc(this.idNpc, this.idMesa)
                 .subscribe(function (res) {
-                console.log(res);
+                //console.log(res)
                 var tipoNpc = res.tipoNpc, ficha = res.ficha;
                 _this.fichaService.setConfiguration(ficha, false, _this.idNpc, _this.idMesa, tipoNpc, true);
                 _this.loading = false;
@@ -4268,7 +4268,7 @@ var GerenciaComponenteComponent = /** @class */ (function () {
         var _this = this;
         this.loading = true;
         var operation = this.getSelectedService(this.template.tipo, 'adiciona');
-        console.log(operation);
+        //console.log(operation);
         operation(this.idObj, this.idMesa, this.tipoObj)
             .subscribe(function (res) {
             _this.atualizaItens(res);
@@ -4648,7 +4648,7 @@ var GerenciaComponenteComponent = /** @class */ (function () {
                         modal = _a.sent();
                         modal.onDidDismiss()
                             .then(function (res) {
-                            console.log(res);
+                            // console.log(res);
                             if (res.data) {
                                 _this.itens = res.data;
                                 _this.loadContent();
@@ -5102,10 +5102,10 @@ var RegraNewComponent = /** @class */ (function () {
             descricao: this.formRegra.get('descricao').value
         };
         var idMesa = this.mesaService.getMesaSelecionada();
-        console.log('Mesa ID:', idMesa);
+        //console.log('Mesa ID:', idMesa)
         this.mesaService.addRegraNew(idMesa, regra)
             .subscribe(function (res) {
-            console.log(res);
+            //console.log(res);
             _this.loading = false;
             _this.callToast('success', 'Adicionado!', 'Regra adicionada com sucesso!');
             _this.modalCtrl.dismiss(res.sistema.sistemas);

@@ -109,7 +109,7 @@ let ItemUpdateComponent = class ItemUpdateComponent {
         this.formItem.get('idTipoItem').setValue(this.itemService.getStaticType());
         this.itemService.findById(id, type)
             .subscribe(res => {
-            console.log(res);
+            // console.log(res);
             const { nome, descricao, tipoItem, tipoRPG, imgURL, valor, peso, isPrivate } = res;
             this.formItem.get('nome').setValue(nome);
             this.formItem.get('desc').setValue(descricao);
@@ -154,14 +154,14 @@ let ItemUpdateComponent = class ItemUpdateComponent {
         this.primeiroForm = form;
         this.primeiroForm.style.display = "none";
         this.opcao = this.formItem.get('idTipoItem').value;
-        console.log(this.opcao);
+        //console.log(this.opcao);
     }
     back(form) {
         this.primeiroForm.style.display = "block";
         this.opcao = -1;
     }
     salvarArma() {
-        console.log('Peso:', this.formItem.get('peso').value);
+        //console.log('Peso:', this.formItem.get('peso').value);
         let obj = {
             id: this.itemService.getStaticID(),
             nome: this.formItem.get('nome').value,

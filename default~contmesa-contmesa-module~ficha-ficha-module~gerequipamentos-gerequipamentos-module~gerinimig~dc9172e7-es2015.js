@@ -1150,7 +1150,7 @@ let CriarComponenteComponent = class CriarComponenteComponent {
         this.primeiroForm = form;
         this.primeiroForm.style.display = "none";
         this.opcao = this.formItem.get('idTipoItem').value;
-        console.log(this.opcao);
+        //console.log(this.opcao);
     }
     back(form) {
         this.primeiroForm.style.display = "block";
@@ -1483,7 +1483,7 @@ let FichaComponent = class FichaComponent {
             this.notificador = this.firestore.collection('ficha').valueChanges();
             // console.log(this.notificador);
             this.notificador.subscribe(res => {
-                console.log(res);
+                //console.log(res);
                 const obj = res.find(obj => obj.id == this.idFicha);
                 if (this.currentTime != obj.timestamp && this.idFicha == obj.id) {
                     this.currentTime = obj.timestamp;
